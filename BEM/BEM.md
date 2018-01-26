@@ -9,7 +9,7 @@
   
   **Принципи роботи з блоками :**
    * Блоки можна вкладувати один в один:
-   ``` javascript
+   ``` html
   <!-- Блок `header` -->
 <header class="header">
     <!-- Вложенный блок `logo` -->
@@ -35,7 +35,7 @@
   * Структура : **ім'я-блока__ім'я-елемента**.   
     Ім'я розділяються подвійним підкреслення (__).
 
-    ``` javascript
+    ``` html
     <!-- Блок `search-form` -->
     <form class="search-form">
         <!-- Элемент `input` блока `search-form` -->
@@ -54,7 +54,7 @@
      
         *`блок__елемент1__елемент2`* 
     
-     ``` javascript
+     ``` html
       <div class="block">
         <div class="block__elem1">
           <div class="block__elem2">
@@ -63,7 +63,7 @@
         </div>
       </div>
     ```
-  ``` javascript
+  ``` html
   <!--
     Неверно. Структура полного имени элементов не соответствует схеме:
     `имя-блока__имя-элемента`
@@ -85,7 +85,7 @@
 </form>
   ```
 
-  ``` javascript
+  ``` html
   <!--
     Верно. Структура полного имени элементов соответствует схеме:
     `имя-блока__имя-элемента`
@@ -98,7 +98,7 @@
 </form>
 ```  
 * Елемент не обов'язково компонент болку .Нe у всіх блоків мають бути елементи:
-```javascript
+```html
 <!-- Блок `search-form` -->
 <div class="search-form">
     <!-- Блок `input` -->
@@ -133,7 +133,7 @@
       **ім'я-блока_ім'я-модифікатора**
  
       **ім'я-блока__ім'я-елемента--ім'я-модифікатора**
-``` javascript 
+``` html 
 <!-- Блок `search-form` имеет булевый модификатор `focused` -->
 <form class="search-form search-form_focused">
     <input class="search-form__input">
@@ -153,7 +153,7 @@
 ## Принципи роботи з модифікатором 
 Модифікатор не може використовуватись самостій від блока чи елемента.Модифікатор має змінювати вид,поведіння або стан сущності , а не заміняти її.
 
-``` javascript
+``` html
 <!-- Верно. Блок `search-form` имеет модификатр `theme` со значением `islands`-->
 <form class="search-form search-form_theme_islands">
     <input class="search-form__input">
@@ -164,7 +164,7 @@
 **Мікс**
 * поєднувати поведінки і стилі деяких сущностей без дублювання кода;
 * створювати нові компоненти на основі існуючих.
-``` javascript
+``` html
 <!-- Блок `header` -->
 <div class="header">
     <!-- К блоку `search-form` примиксован элемент `search-form` блока `header`-->
@@ -180,7 +180,7 @@
 * елемент відокремлюється він модифікатора **( - - )** або **( _ )**
 
 ## Селектори класів 
-``` javascript
+``` html
 <header class="header">
     <!--
     `header__button` — элемент блока `header`;
@@ -191,13 +191,13 @@
 </header>
 ```
 **Зовнішня геометрія і перевикористання**:
-``` javascript
+``` html
 <!-- Блок `header` -->
 <header class="header">
     <button class="button header__button">...</button>
 </header>
 ```
-``` javascript
+``` css
 .button {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -211,14 +211,14 @@
 В данном примере внешняя геометрия и позиционирование блока **button** задана через элемент **header__button**. Блок **button** не специфицирует никакие отступы и может быть легко переиспользован в любом месте.
 
 **Спілньий клас що має особливості:**
-``` javascript
+``` html
 <article class="article text">...</article>
 
 <footer class="footer">
     <div class="copyright text">...</div>
 </footer>
 ```
-``` javascript
+``` css
 .text {
     font-family: Arial, sans-serif;
     font-size: 14px;
