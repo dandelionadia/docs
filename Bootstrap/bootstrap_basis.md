@@ -7,12 +7,9 @@
 ```
 Додати метатег **viewport** в ваш **head**
 ``` javascript
-<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
-Обмежити приближення на мобілих присторо додавши **user-scalable=no** ,можна лише скролити.Використовувати краще нечасто.
-``` javascript
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-```
+
 ## Розмітка
 * `row` має бути поміщено в `container` або `container-fluid`
 * у рядка розташовуютьсь горизонтальні колонки `col-md-4`
