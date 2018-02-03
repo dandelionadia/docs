@@ -1,8 +1,12 @@
 # Name:
 * HTML 
-  >Це мова розмітки (як елементи мають розташовуватися на сторінці).   
+  >Мова розмітки гіпертексту.
+    HTML визначає скелет для даних на сторінці за допомогою тегів.   
 
-  >Is a markup language (how the elements should be located on the page).
+  >Hyper Text Markup Language.
+
+  >HTML defines the skeleton for the data on the page using tags.
+    
 
 * CSS
   >Каскадна таблиця стилів (набір параметрів що
@@ -11,9 +15,13 @@
   >Cascading style sheet (a set of parameters that change the appearance of elements on a page).
 
 * SCSS
-  >SASS/SCSS - це надстройка ЦСС
-із корисними особливостями , яка компілюється назад в CSS.
-  >SASS is a superset of CSS which compiles back to CSS.
+  >Чи є методологія CSS?
+
+  >Це набір правил, як називати класи в CSS, щоб вони були незалежними та багаторазовими.
+
+  >Is a CSS methodology.
+
+  >It’s a set of rules how to name classes in CSS so they are independent and reusable.
 
 * JS
   >Мова програмування яка використовується в браузері (виконує оберації із сторінкою , взаємодіє 
@@ -39,11 +47,15 @@
   Framework this is a set of tools for quickly creating a page (grid, adding elements, templates ...)
   
 * Gulp
-  >Виконує задачі: автоматичне оновлення сторінки ,збереження файлів..
+  >Це інструмент автоматизації. Він автоматизує речі, які розробники часто використовують під час роботи. Наприклад, автоматично перевіряє код, збирає його та перезавантажує сторінку.
 
-  >Performs tasks: automatically refreshing the page, saving files ..
+  >Is an automation tool. It automates things which developers often use during their work. For example, automatically checks the code, compiles it and reloads the page.
 
 * Git
   >Система контролю версій (файлів)
 
-  >Version control system (files)
+  >Це дозволяє мати різні версії файлів і перемикатися між потрібною вам версією.
+
+  >Version control system.
+
+  >It allows to have different versions of files and switch between the version you need.
