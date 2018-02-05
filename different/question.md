@@ -14,42 +14,42 @@
 
      HTML
     >Hyper Text Markup Language.
-    HTML defines the skeleton for the data on the page using tags.
+    HTML defines the skeleton of the page using tags.
 
      CSS
-    >Cascading style sheet. Set of parameters that change the appearance of elements on a page.
+    >Cascading style sheet. Parameters that control the appearance of the page.
 
  3. #### What are floats and when would you use them?
  
-      >Float it is a flow around the elements.
-      determines which side there will be an element.
-      while the other elements will be wrapped around the other side.
-      when it is impossible or inefficient to use flex.
+      >Float controls elements flow.
+      Determines relation between the element and its siblings.
+
+      >I would use float when it's impossible or not efficient to use flex.
 
 4. #### When would you use positioning?
 
-    >When making mask or scrolls items. Position:relative,absolute,fixed..
+    >For example, when making color masks, or making some element to stick at the top of the page.
  
 5. #### What is difference between rems and ems? 
 
-    **rem:** this is a value relative to the base font size.RUT-корінь.
+    **rem:** is a value relative to the base font size. (*root* - корінь).
 
-    *Це величина до базового розміру шрифта.*
+    *Це величина на основі базового розміру шрифта.*
 
-    **em:** this is a value relative to the font size of an element.
+    **em:** is a value relative to the font size of an element.
 
     *це величина по відношенню до розміру шрифта елемента.*
 
-  6. ####  Can you give an example of a pseudo element? 
+  6. #### Can you give an example of a pseudo element? 
 
-      >Pseudo elements are selectors that create items using css.
+      >Pseudo elements are selectors that create element using CSS.
 
-      >*Псевдо елементи це селектори що створюють елемети за допомогою css.*
+      >*Псевдо елементи це селектори що створюють елемети за допомогою CSS.*
 
       >Псевдоелементи:
       ::after, ::before.
 
-  7. ####  What are vendor prefixes?
+  7. #### What are vendor prefixes?
 
       >Vendor prefixes - are browser-specific prefixes which allow experimental features, for example in CSS.
 
