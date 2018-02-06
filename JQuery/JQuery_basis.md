@@ -27,7 +27,7 @@ $.fn.disable = function() {
 `$.fn.disable` - розширяємо **$** методом з іменем **disable**
 **this** - ідентифікатор ,визначає елементи над котрими будуть виконуватися операції.
 
-`each()` - метод,викликається дял обходу елементів.
+`each()` - метод,викликається для обходу елементів.
 
 ### Селектори:
 
@@ -170,6 +170,17 @@ $.fn.disable = function() {
    * **attr({attrName1:value1,attrName2:value2})** групі атрибутів *attrName1,attrName2* будуть присвоєні значення *value1,value2* у всіх вибраних елементах.
    * функція **attr(attrNAme,function(index,value))**.
    Атрибуту *attrNAme* буде присвоєне значення повернуте функцією.*index* -позиція елемента , *value* - значення.
+
+  >Заміняємо картинку `auto` на `moto`.
+   ```html
+    <div>
+      <img src="auto.jpg">
+    </div>
+    <img src="moto.jpg">
+   ```
+   ```javascript
+    $("#pop img").attr("src", "moto.jpg");
+   ```
 
  * **removeAttr()** функція для видалення атрибута із елемента.
 
