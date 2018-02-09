@@ -1,8 +1,8 @@
 ## Flex
  * `flex-wrap` - направлення елементів.
 
-![Image of yaktocat](wrap.png)
+![Image of yaktocat](img/wrap.png)
 
  * `flex container` - контейнери.
 
-![Image of yaktocat](flex.png)
+![Image of yaktocat](img/flex.png)
