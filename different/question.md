@@ -93,12 +93,12 @@
 
     >Responsive - is a layout which changes in response to something, for example screen size.
         
-    >*Респонсів- це макет який змінюються у відповідь на щось наприклад на розмір екрану.*
+    >*Респонсів- це макет який змінюється у відповідь на щось наприклад на розмір екрану.*
 
  2. #### Have would you make something responsive?
 
     >I do responsive using bootstrap grid and with media query.
-    Media only screen and ( min-width: 786px) { }
+    
 
  3. #### Do you know responsive emails? What it entails? 
 
