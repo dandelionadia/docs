@@ -58,13 +58,13 @@
 
   1. #### What is your typical workflow like?
 
-      >I open the visual studio.
-      I create a page layout in html.
-      I add a bootstrap and sass if necessary.
-      I split the page into blocks.
-      I style blocks in CSS one by one.
-      I check it in the browser.
-      I commit changes into Git.
+      >I open visual studio.
+       I create a page layout in html.
+        I split the page into blocks.
+        I add Bootstrap and SASS if necessary.
+        I style blocks in CSS one by one.
+        I check it in the browser.
+        I commit changes into Git.
 
 2. #### What do you use as your primary text editor? 
 
@@ -83,7 +83,9 @@
 
 6. #### Have you ever used Git, Bitbucket or Subversion? 
 
-    >What's the first thing do when you have a bug in your code? I go to developer tools and terminal.
+    >What's the first thing do when you have a bug in your code? 
+    
+    >I go to developer tools and terminal.
 
 ### Responsive
 
