@@ -19,6 +19,9 @@
      CSS
     >Cascading style sheet. Parameters that control the appearance of the page.
 
+    >Cascading is one element you can put into another.
+    >Kаскадність це один елемент можна вкласти в інший.
+
  3. #### What are floats and when would you use them?
  
       >Float controls elements flow.
