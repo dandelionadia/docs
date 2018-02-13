@@ -192,3 +192,4 @@ $.fn.disable = function() {
 
  * **removeAttr()** функція для видалення атрибута із елемента.
 
+![Image of yaktocat](img/jquery.png)
