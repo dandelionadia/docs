@@ -193,3 +193,16 @@ $.fn.disable = function() {
  * **removeAttr()** функція для видалення атрибута із елемента.
 
 ![Image of yaktocat](img/jquery.png)
+
+## Пошук Sizzle
+`getElementById(id)` – поиск по id="…"
+
+`getElementsByName(name)` – поиск по name="name" и id="name"
+
+`getElementsByClassName(class)` – поиск по class="class"
+
+`getElementsByTagName(tag)` – поиск по тегу
+
+`querySelectorAll(selector)` – поиск по произвольному CSS селектору
+
+>Результат пошуку не кешується
