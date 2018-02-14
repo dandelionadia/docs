@@ -3,12 +3,12 @@
 Download the uncompressed, **development** jQuery 3.3.1
 2. Підключення бібліотеки до сторінки :
 ```html
-<script type="text/javascript" src="js/jquery.js"></script>
 <!--Данный способ хорош для работы в offline,скачування на комп-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--онлайн використання-->
 <script type="text/javascript"
 src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.
 js"></script>
-<!--онлайн використання-->
 ```
 ```html
     <!-- у папкі з файлами є бапка в котрій знаходиться бібліотека -->
