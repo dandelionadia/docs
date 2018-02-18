@@ -133,3 +133,35 @@
 6. #### What is event binding?
 
     >When I want to do some action on  some event.
+
+## NEW
+
+* What is HTML5? How is it different from HTML?
+* Which HTML5 tags do you know? What is their purpose?
+
+СSS uses selectors and applies different properties to them.
+
+
+* How can you declare selectors in CSS?
+    * Selectors can be by tag, class or id. I can also use things to make selectors more specific, like pseudo-selectors or cascading.
+
+* What is the selector’s specificity?
+    * Selector’s specificity is the amount of elements the selector affects. The less elements it affects - the more specific it is.
+
+* What is responsive web design?
+    * Responsive web design - is a technique to write/create/make layouts which change in response to something, for example a screen size.
+
+* What is adaptive design?
+    * Adaptive design is a technique to adapt the layout for different environments (i.e. devices)
+
+* What is the difference between responsive and adaptive design?
+    * Responsive design has one layout which changes. Adaptive web design may have different layouts for different screen sizes.
+
+* What pseudo-selectors do you know?
+    * “hover”, “focus”, “first-child”, “last-child”, “not”
+
+* What pseudo-elements do you know?
+    * “before” and “after”?
+    
+* Which CSS pre-processors do you know?
+    * SASS (LESS)
