@@ -83,3 +83,13 @@
      <p>Copyright 2011 Acme United. All rights reserved.</p>
 </footer>
 ```
+# English
+* `section` element groups related data when there is no specific tag to group it.
+
+* `header` element wraps introductory content (navigation, headings).
+
+* `footer` is a footer for the nearest section or root element. Usually contains information about the author of the section.
+
+* `aside` wraps the content which is not directly related to the main content of the page. Doesn't affect the page's content if removed.
+
+* `article` element represents independent content sections of the page.
