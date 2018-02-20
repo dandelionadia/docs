@@ -9,6 +9,11 @@ it is the content of a web page
 reset - this button resets the form.
 submit - submits information
 
+* **span/div**
+>**div**  is a block element, it takes all the width.
+
+>**span** is inline element, it doesn't break the line.
+
 * **div**
 >is an element to create (non-visible) structure.
 
@@ -37,8 +42,6 @@ link
 * **ul/li|ol/li**
 the order of the item is important.
 * **p** paragraph
-
-* **span**
 
 * **table**
 
