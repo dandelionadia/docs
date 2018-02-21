@@ -43,43 +43,45 @@
 ## Вирівнювання форм:
 ```css
 .field__color {
-  border-color: rgb(231, 125, 125);
-  
+  border-color: rgb(138, 192, 255);
 }
+
 .field {
   padding: 5px;
-  text-align: right; /*stap 1*/
-  /* простір між рядками */
-  line-height: 25px; 
-  color: rgb(88, 6, 6);
-
+  text-align: right;/*step 1*/
+  line-height: 25px;/*висота строки*/
+  color: rgb(156, 144, 144);
 }
 
 .pole {
-  float: left;/*stap 2*/
+  float: left;/*step 2*/
   padding-right: 10px;
 }
 
 .main {
-  float: left;/*stap 3*/
+  float: left;/* step 3*/
+}
+
+.reset {
+  color: rgb(85, 78, 78);
+  border-color:  rgb(138, 192, 255);
+  background-color: azure;
+  width: 173px;
+  margin-left: 80px;
+  margin-top: 8px;
 }
 ```
 ```html
-  <!-- stap 3  add <div class="main">-->
-  <div class="main"> 
+  <form class="main" action="">
     <div class="field">
-      <label class="pole" for="fullname"> Name:</label>
-      <input class="field__name field__color" type="text" name="name" placeholder="Артем Артемович">
+      <label class="pole" for="name">name:</label>
+      <input type="text" class="field__name field__color" id="name" placeholder="Artem">
     </div>
+
     <div class="field">
-      <label class="pole" for="fullname"> Password:</label>
-      <input class="field__password field__color" type="text" name="password" placeholder="lorem123456">
+      <label class="pole" for="password">password:</label>
+      <input type="password" class="field__password field__color" id="password" placeholder="11111">
     </div>
-    <div>
-      <input type="radio" name="radio">
-      <label for="fullname"> woman </label>
-      <input type="radio" name="radio">
-      <label for="fullname"> man </label>
-    </div>
-  </div>
+    <input class="reset" type="reset">
+  </form>
   ```
