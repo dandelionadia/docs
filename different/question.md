@@ -137,9 +137,11 @@
 ## NEW
 
 * What is HTML5? How is it different from HTML?
+    * HTML5 is an improved version of HTML.
+    * HTML5 has new tags for the different data on the page (audio, video)
 * Which HTML5 tags do you know? What is their purpose?
 
-СSS uses selectors and applies different properties to them.
+* СSS uses selectors and applies different properties to them.
 
 
 * How can you declare selectors in CSS?
