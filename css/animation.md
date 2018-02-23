@@ -9,7 +9,7 @@
 * `transition-delay:0.5s` - як довго чекати між зміною властивостей і початком переходу.
 ```html
 <div>
- <p id="button"button</p>
+ <p id="button">button</p>
 </div>
 ```
 
