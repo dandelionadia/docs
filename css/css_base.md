@@ -45,6 +45,7 @@
 
 ## Розташовує брок горизонтально.
 `display: inline-block;`
+https://www.w3schools.com/cssref/playit.asp?filename=playcss_display&preval=inline
 
 ## Align-items
 ![Image of yaktocat](img/align-items.png)
