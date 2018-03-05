@@ -184,3 +184,80 @@ console.log(Math.max(2,4));
 console.log(Math.min(2,4) + 100);
 //102
 ```
+Функція **confirm** - котра викликає вікно із кнопками OK/consel.Якщо нажати ОК - поверне екгу, якщо нажати consel - поверне фолс.
+```
+confirm('that you?');
+//true/folse
+```
+Функція **prompt** - котра використовується щоб задати відкрите запитання. 1-й аргумент запитання, 2-й - текст, з котрого користувач починає.
+```
+prompt('That you?', '...');
+//...
+```
+Не можна змінити зовнішній вигляд цього вікна.
+```
+var theNumber = Number(prompt('Вибери число', '...'));
+alert('You' + theNumber * theNumber);
+//множе число на число
+```
+Функція **Number** перетворює величину в число.
+
+Функція **prompt** повертає строчку.
+
+## Цикл while i do
+```
+var num = Number(prompt('Вибери число', '...'));
+if (num < 10) {
+  alert('small');
+} else if (num > 100) {
+  alert('many');
+} else {
+  alert('Ok');
+} 
+console.log('Your number:', + num);
+```
+**while** - це цикл повторення.
+```
+var number = 0;
+while(number <= 12) {
+  console.log(number);
+  number = number + 2;
+}
+```
+```
+var result = 1;
+var counter = 0;
+while(counter < 10) {
+  result = result * 2;
+  counter = counter +1;
+}
+console.log(result);
+//1024
+```
+Вичислення 2 в 10 степені. Дві змінні ,одна (result), для слідкування за результатом, а інша (counter), для пдрахування кілкьості множень.
+
+**do**
+```
+do {
+  var name = prompt('Who are you?');
+} while(!name);
+console.log(name);
+```
+Цикл **do** відрізняється: цикл do виконує тіло хоча б раз ,а перевіряє умову ,після першого разу.
+
+Один раз робить,а лише потім перевіряє.
+
+## for 
+Цикл **for**  схочий на **while** але по коротще і простіше.
+```
+for(var number = 0; number <= 12; number = number +2)
+console.log(number);
+```
+```
+var result = 1;
+for(var counter = 0; counter < 10; counter = counter +1) {
+  result = result *2;
+}
+console.log(result);
+//1024
+```
