@@ -1,4 +1,7 @@
 ## Carousel
+
+https://codepen.io/kettanaito/pen/QQePzY
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
