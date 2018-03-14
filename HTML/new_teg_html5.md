@@ -84,7 +84,7 @@
 </footer>
 ```
 # English
-* `section` element groups related data when there is no specific tag to group it.
+* `section` is element  wich groups related data when there is no specific tag to group it.
 
 * `header` element wraps introductory content (navigation, headings).
 
