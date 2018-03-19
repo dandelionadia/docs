@@ -26,17 +26,35 @@
 * slideUp()
 >Скользить вгору
 
-* slideToggle()
->відображення або скривання елементів із сзользящим рухом.
-
 * val()
 >Получення значення першого елемента.
 
 * css()
 >Встановлює або повертає властивості стиля обраного елемента.
 
+* slideToggle()
+>відображення або скривання елементів із сзользящим рухом.
+
 * toggleClass()
 >Якщо у елемента уже є клас то він видаляється,якщо немає то він додається.
+
+```js
+$(document).ready(function() {
+ $(".btn-slide").click(function(){
+		$("#panel").slideToggle("slow");
+		$(this).toggleClass("active");
+    return false;
+	});
+})
+```
+```html
+<body>
+  <div id="panel">text</div>
+  <p class="slide"><a href="#" class="btn-slide">Slide Panel</a></p>
+</body>
+```
+https://codepen.io/ridko/pen/VXmLxd
+
 
 * animate()
 >Анімування.Більшість властивостей котрі НЕ є числовими не можуть бути анімовані.
@@ -111,6 +129,6 @@
 * mouseenter 
 >При наведенні мишки
 
-## Приклади
+
 
 
