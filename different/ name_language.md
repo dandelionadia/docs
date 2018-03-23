@@ -15,14 +15,10 @@
   >Cascading style sheet (a set of parameters that change the appearance of elements on a page).
 
 * SCSS
-  >Чи є методологія CSS?
-
-  >Це набір правил, як називати класи в CSS, щоб вони були незалежними та багаторазовими.
-
-  >Is a CSS methodology.
-
-  >It’s a set of rules how to name classes in CSS so they are independent and reusable.
-
+  >Це синтаксис що додає нові можливісто  до ссс. В кінці перетворюється в ссс
+  
+  >This is a syntax that adds new possible to the CSS. In the end turns into CSS.
+  
 * JS
   >Мова програмування яка використовується в браузері (виконує оберації із сторінкою , взаємодіє 
   із відвіувачем, із сервером) (нажаття на кнопку,передача даних,випливаючі вікна ..).                            
@@ -38,6 +34,14 @@
   >Розділення інтерфейса на незалежні блоки.
 
   >Unbundling the interface into independent blocks.
+
+  >Це набір правил, як називати класи в CSS, щоб вони були незалежними та багаторазовими.
+
+  >Is a CSS methodology.
+
+  >It’s a set of rules how to name classes in CSS so they are independent and reusable.
+
+
 
 * Bootstrap
   >Це фреймворк.                             
