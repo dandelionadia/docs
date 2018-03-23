@@ -1,3 +1,4 @@
+```js
  <!-- Скрипт на языке JavaScript --> 
 <script type="text/javascript">
   $(document).ready(function(){
@@ -16,7 +17,8 @@
 
   });
   </script>
-    
+  ```
+  ```html
   <!-- HTML код карусели -->
   <div class="examplecarusel">
   <div id="myCarousel2" class="carousel slide" data-interval="3000" data-ride="carousel">
@@ -51,3 +53,4 @@
     <input type="button" class="btn btn-info prev-slide" value="Предыдущий">
     <input type="button" class="btn btn-info next-slide" value="Следующий">
   </div>
+  ```
