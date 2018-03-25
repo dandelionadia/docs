@@ -135,7 +135,55 @@ https://codepen.io/ridko/pen/VXmLxd
 
 * `slideToggle()`
 >відображення або скривання елементів із сзользящим рухом.
+```js
+$('.list').click(function() {
+  $(this).children('.text').slideToggle('slow');
+})
+```
+```html
+<naw>
+  <ul class="box">
+    <li class="list" >
+      <a class="link" href="#">list text </a>
+      <p class="text">lorem loorem lorem lorem </p>
+    </li>
+    <li class="list" >
+      <a class="link" href="#">list list text</a>
+      <p class="text">lorem  lorem lorem lorem </p>
+    </li>
+  </ul>
+</naw>
+```
+```css
+.box {
+  background-color: red;
+  width: 200px;
+  margin: auto;
+  padding: 0;
+}
 
+.list {
+ list-style: none;
+  margin-left: 0;
+  padding: 0;
+  border-bottom: 1px solid black; 
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  /* силка стає на весь ядок і можна задати відступи,а так вона займає місце скільки й текст */
+  display: block;
+  padding: 10px; 
+}
+
+.text {
+  background-color: yellow;
+  padding: 10px;
+  margin: 0;
+  display: none;
+}
+```
 * `.after()`
 Вставляет заданное содержимое, либо перемещает указанные элементы, вставляя их после каждого элемента набора jQuery.
 ```js 
