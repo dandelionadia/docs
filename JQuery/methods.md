@@ -1,3 +1,22 @@
+ * SetTimout()
+ ```js
+  SetTimout(function() {
+  $('.L').remove();
+ }, 2000);
+ ```
+ * Send()
+
+ * beforeSend()
+ виконати до початку події
+
+ * complete()
+ виконти після закінчення події
+
+ * append()
+ додати щось до html
+ ```js
+ $('#T').append('<p>nhfnfnf</p>');
+ ```
  * `addClass()`- додавати класи.
 
  * `removeClass()` - видалення класу.
