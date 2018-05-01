@@ -6,6 +6,6 @@
 
 2.Знизу:
 ```html
- <h2><a name="A3">Title 3</a></h2>
+ <h2><a id="A3">Title 3</a></h2>
  <p></p>
  ```
