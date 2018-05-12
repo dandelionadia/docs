@@ -16,7 +16,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 70;
+    opacity: 0.7;
     background-color: rgba(40, 32, 25, 0.6);
     z-index: -1;    
   }
