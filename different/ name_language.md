@@ -15,6 +15,7 @@
   >Cascading style sheet (a set of parameters that change the appearance of elements on a page).
 
 * SCSS
+  >Це предпроцесор css
   >Це синтаксис що додає нові можливісто  до ссс. В кінці перетворюється в ссс
   
   >This is a syntax that adds new possible to the CSS. In the end turns into CSS.
