@@ -300,3 +300,151 @@ for (var i = 1; i <= 10; i++) {
 }
 
 ```
+```js
+var totalPages = 6; // Всего страниц в документе
+var consumptionTotal = 0; //общий расход краски на все страницы
+var consumptionPerPage = 70;// расход краски на одну страницу (70 мг)
+
+for (var page = 1; page <= totalPages; page++) {
+  keks.print(page);
+  consumptionTotal += consumptionPerPage;
+  console.log(consumptionTotal);
+}
+```
+### Экономим краску
+```js
+var totalPages = 6; // Всего страниц в документе
+
+var consumptionTotal = 0; // Общий расход тонера
+var consumptionPerPage = 70; // Расход краски на одну страницу
+var economyMode = true;
+
+for (var page = 1; page <= totalPages; page++) {
+  keks.print(page);
+
+  if (economyMode && page > 3) {
+    consumptionTotal += consumptionPerPage * 0.5;
+  } else {
+    consumptionTotal += consumptionPerPage;
+  }
+  
+  console.log(consumptionTotal);
+}
+```
+### Поиск чётного числа
+Оператор % или «остаток от деления» возвращает остаток от деления.
+
+10 % 5;  // Вернёт 0
+
+12 % 5;  // Вернёт 2
+
+7 % 3;   // Вернёт 1
+
+5.5 % 2; // Вернёт 1.5
+
+Если остаток от деления числа на 2 равен 0 — число чётное, иначе нечётное
+
+```js
+var days = 9; // Дней в периоде
+var evenDayAmount = 200; // Количество протеина в чётные дни
+var oddDayAmount = 100; // Количество протеина в нечётные дни
+var total = 0; // Общее количество протеина
+
+for (var i = 1; i <= days; i++) {
+    if (i % 2 === 0) {
+      total += evenDayAmount;
+      } else {
+        total += oddDayAmount;
+        }
+      console.log(total);
+  }
+  
+/*
+
+Мяу! Программа должна считать сколько протеина я должен выпить за весь тренировочный период.
+
+В чётные дни я пью 200 грамм. В нечётные 100 грамм.
+
+Количество дней хранится в переменной days, количество протеина для приёма в чётный день — в переменной evenDayAmount, протеин в нечётный день — в переменной oddDayAmount, а результат необходимо записать в переменную total, которая уже задана.
+
+*/
+```
+
+Вот текущий порядок команд в цикле:
+
+Получаем результат броска.
+Проверяем, что результат броска меньше нуля. Если это так, то переходим к шагу три, иначе к шагу четыре.
+Пишем в консоль про промах и увеличиваем счётчик промахов на единицу.
+Увеличиваем общий результат total и выводим результат броска в консоль.
+Нам нужно, чтобы:
+
+Проверка на общее количество промахов гарантированно выполнялась на каждом витке цикла.
+По достижении трёх промахов игра бы сразу завершалась.
+
+```js
+var score = 0;
+var total = 0;
+var victoryPoints = 100;
+var misses = 0;
+
+while (total < victoryPoints) {
+  if (misses >= 3) {
+    break;
+  }
+
+  score = keks.getScore();
+
+  if (score < 0) {
+    console.log('Промах!');
+    misses++;
+  } else {
+    total += score;
+    console.log('Результат броска: ' + score);
+  }
+}
+
+if (total >= victoryPoints) {
+  console.log('Победа! Очков: ' + total + ', промахов: ' + misses)
+  } else {
+     console.log('Проигрыш. Очков: ' + total + ', промахов: ' + misses)
+    }
+
+```
+
+```js
+var initialWeight = 6000; // Исходный вес в граммах
+var targetWeight = 5000; // Желанный вес в граммах
+var currentWeight = initialWeight;//теперішня вага
+var days = 0;
+
+while (currentWeight > targetWeight) {
+    var persent = currentWeight / 100 * 5; // 5% теперішньої ваги
+    currentWeight = currentWeight - persent; // віднімаємо 5% він теперішньої ваги
+    days ++;
+  }
+
+/*
+
+Мяу! Меня утомляют диета и тренировки, поэтому я хочу узнать, сколько ещё дней осталось заниматься, чтобы добиться нужного веса к мероприятию.
+
+Входные данные: вес в начале и вес в конце.
+
+Логика работы: если я тренируюсь и сижу на диете, то теряю 5% своей массы в день (на сухом корме не особо пожируешь, а тренировки суровые).
+
+Просто посчитай, сколько дней понадобится провести в таком режиме и запиши количество в переменную days.
+
+*/
+```
+
+або 
+```js
+var initialWeight = 6000; // Исходный вес в граммах
+var targetWeight = 5000; // Желанный вес в граммах
+var currentWeight = initialWeight;//теперішня вага
+var days = 0;
+
+  while (currentWeight > targetWeight) {
+    currentWeight = currentWeight * 0.95;
+    days ++;
+  }
+```
