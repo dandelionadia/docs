@@ -699,3 +699,82 @@ numbers[index] = 2;
 console.log(numbers);
 // Выведет в консоль [1,2]
 ```
+
+```js
+// Алфавит
+var symbols = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', ' ', '.', ',', '—', '!'];
+
+// Закодированное сообщение
+var encodedMessage = [18, 38, 46, 62, 66, 50, 33, 41, 66, 49, 48, 38, 58, 62, 68, 66, 48, 37, 42, 47, 66, 50, 33, 41, 66, 49, 48, 51, 49, 42, 67];
+
+// Раскодированное сообщение
+var decodedMessage = '';
+
+for (i = 0; i < encodedMessage.length; i++) {
+  decodedMessage += symbols[encodedMessage[i]];
+  }
+/*
+
+Мяу! Я научился шифровать и мне нужна программа расшифровки.
+
+Есть массив symbols, в котором хранится алфавит (буквы и другие символы).
+
+Есть массив encodedMessage, в котором хранится зашифрованное сообщение. Каждый элемент этого массива — это индекс символа из массива symbols.
+
+Программа дешифровки должна переводить элементы из массива с шифровкой (encodedMessage) в символы из массива алфавита (symbols) и склеивать из них расшифрованную строку. Эту строку запиши в переменную decodedMessage.
+
+*/
+```
+### Меняем элементы местами
+```js
+var usersByDay = [4, 1, 2, 3];
+console.log(usersByDay);
+
+var swap = usersByDay[0];
+
+usersByDay[0] = usersByDay[1];
+console.log(usersByDay);
+
+ usersByDay[1] = swap;
+ console.log(usersByDay);
+ ```
+ ### Ищем минимальный элемент
+ ```js
+ var usersByDay = [4, 2, 1, 3];
+console.log(usersByDay);
+
+var currentIndex = 0;
+var minValue = usersByDay[currentIndex];
+
+for (var j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+  
+  if (usersByDay[j] < minValue) {
+      minValue = usersByDay[j];
+      console.log('Новый минимальный элемент: ' + minValue);
+    }
+    
+}
+
+console.log('Минимальный элемент: ' + minValue);
+```
+### Начинаем сортировку
+```js
+var usersByDay = [4, 2, 1, 3];
+console.log(usersByDay);
+
+var currentIndex = 0;
+var minValue = usersByDay[currentIndex];
+
+for (var j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+  if (usersByDay[j] < minValue) {
+    minValue = usersByDay[j];
+    var swap = usersByDay[currentIndex];
+    usersByDay[currentIndex] = minValue;
+    usersByDay[j] = swap;
+    console.log('Меняю местами ' + swap + ' и ' + minValue);
+    console.log('Массив сейчас: ' + usersByDay);
+  }
+}
+
+console.log('Минимальный элемент: ' + minValue);
+```
