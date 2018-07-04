@@ -873,3 +873,108 @@ if (usersByDay.length % 2 !== 0) {
 
 undefined (undefined)
 ```
+
+```js
+var expectedUsers = 1000;
+
+var usersByDay = [817, 581, 1370, 752, 1247, 681, 1120, 915, 875, 1341, 757, 610, 812, 741, 1139, 812, 638, 877, 1242, 1159, 1372, 1170, 845, 1289, 515, 1247, 769, 1261, 2805, 1201];
+
+// Рисуем график посещаемости
+keks.plot(usersByDay, expectedUsers);
+
+// Суммируем посещаемость
+var totalUsers = 0;
+for (var i = 0; i <= usersByDay.length - 1; i++) {
+  totalUsers += usersByDay[i];
+}
+
+// Рассчитываем среднее значение посещаемости
+var averageUsers = totalUsers / usersByDay.length;
+console.log('Средняя посещаемость: ' + averageUsers);
+
+if (averageUsers > expectedUsers) {
+  console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} else {
+  console.log('Посещаемость так себе. Нужно поднапрячься!');
+}
+
+// Сортируем массив
+
+for (var i = 0; i <= usersByDay.length - 2; i++) {
+  var minValue = usersByDay[i];
+
+  for (var j = i + 1; j <= usersByDay.length - 1; j++) {
+    if (usersByDay[j] < minValue) {
+      minValue = usersByDay[j];
+      var swap = usersByDay[i];
+      usersByDay[i] = minValue;
+      usersByDay[j] = swap;
+    }
+  }
+}
+
+
+// Рассчитываем медиану
+
+if (usersByDay.length % 2 !== 0) {
+  var medianIndex = (usersByDay.length - 1) / 2;
+  var median = usersByDay[medianIndex];
+} else {
+  var leftIndex = usersByDay.length / 2 - 1;
+  var rightIndex = usersByDay.length / 2;
+  var median = (usersByDay[leftIndex] + usersByDay[rightIndex]) / 2;
+}
+console.log('Медианная посещаемость: ' + median);
+
+```
+
+### Осталось понять, как посчитать проценты.
+
+Для этого нужно поделить значение медианы на среднее значение. Например, если медиана составляет 80, а среднее значение 100, то:
+
+// Медиана составляет 80% от среднего
+80 / 100 = 0.8
+
+### Функція
+```js 
+var calculateMiles = function (distance) {
+
+  var percent = 0.25;
+  if (distance > 10500) {
+    percent = 0.35;
+  }
+  var miles = distance * percent;
+  console.log('За полёт получим ' + miles + ' миль');
+};
+
+calculateMiles(4125);
+calculateMiles (11000);
+
+```
+Что значит возвращать? Функция может выполнить код и отдать результат своих действий. Этот результат подставится в то место, где мы вызвали функцию.
+
+Для этого используется оператор return. После оператора надо указать возвращаемое значение. Тогда функция дойдёт до строки с return, вернёт результат своей работы и закончит выполнение кода, иными словами произойдёт выход из функции.
+### Возвращение из функции
+Объявим функцию, которая будет возвращать сумму числа 2 и ещё какого-то числа.
+```js
+var increaseByTwo = function (number) {
+  var sum = 2 + number;
+  return sum;
+};
+
+increaseByTwo(1); // Функция вернёт 3
+increaseByTwo(2); // Функция вернёт 4
+increaseByTwo(4); // Функция вернёт 6
+```
+increaseByTwo сложит значения и вернёт полученный результат.
+
+Несколько вещей, которые нужно знать:
+
+Код, написанный на новой строке после return, не выполняется.
+Функция не может вернуть сразу много значений, она возвращает только один результат.
+Если внутри функции нет return или после return не указано возвращаемое значение, функция вернёт undefined, иными словами, ничего.
+В JavaScript есть встроенные функции языка, которые возвращают результат своей работы. Таких функций очень много, вот несколько из них:
+
+Math.ceil(number) — принимает на вход число и округляет его до целого в большую сторону.
+Math.floor(number) — делает то же самое, только округляет в меньшую сторону.
+Math.round(number) — округляет число до ближайшего целого значения.
