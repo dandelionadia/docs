@@ -934,6 +934,49 @@ console.log('Медианная посещаемость: ' + median);
 
 // Медиана составляет 80% от среднего
 80 / 100 = 0.8
+## Цікаво!!
+```js
+// Квалификационное значение 
+var qualificationDistance = 200;
+// длины прыжков
+var attempts = [120, 150, 160, 201, 203, 180, 202];
+console.log(attempts);
+// три лучших прыжка;посчитать среднее значение этих трёх прыжков
+
+attempts.sort(function(a,b){
+  return b - a;
+});
+
+var threeBest = attempts.slice(0, 3);
+console.log(threeBest);
+
+var sum = threeBest.reduce(function(acc, num){
+  return acc + num;
+});
+console.log(sum);
+
+var averageBest = sum / threeBest.length;
+console.log(averageBest);
+
+//  прошёл квалификацию/сли квалификация не пройдена
+var qualified = averageBest > qualificationDistance;
+
+console.log(qualified);
+
+/*
+
+Мяу! Я провожу тренировки и хочу понять, пройду ли квалификацию.
+
+В течение тренировки я делаю несколько прыжков, и собираю длины прыжков в массив attempts.
+
+Программа должна выбрать три лучших прыжка, а затем посчитать среднее значение этих трёх прыжков и записать его в переменную averageBest.
+
+Квалификационное значение хранится в переменной qualificationDistance.
+
+Если среднее от лучших трёх прыжков больше квалификационного значения, то я прошёл квалификацию и переменная qualified должна содержать true. Если квалификация не пройдена, то в qualified должно быть false.
+
+*/
+```
 
 ### Функція
 ```js 
