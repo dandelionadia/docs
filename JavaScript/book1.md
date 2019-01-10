@@ -10,11 +10,11 @@ console.log(typeof doh.toUpperCase);
 console.log(doh.toUpperCase());
 // → ДЫК
 ```
-* **push**
+* **push** (добавляют и отнимают элементы в конце массива)
 * **join** (Массив строк можно сплющить в одну строку при помощи метода join. В
 качестве аргумента join передают строку, которая будет
 вставлена между элементами массива.)
-* **pop**
+* **pop** (добавляют и отнимают элементы в конце массива)
 ```js
 var mack = [];
 mack.push("Трест,");
@@ -72,3 +72,113 @@ console.log(object3.value);
 переменная. Сравнение разных объектов вернёт false,
 даже если у них идентичное содержимое.
 
+```js
+var map = {
+  name: "Tom",
+  surname: "Radle"
+}
+
+console.log(map.name);
+// Tom
+console.log(map["surname"]);
+// Radle
+
+function a (index) {
+    // повертає значення ключя 
+  return map[index];
+}
+console.log(a("surname"));
+// Radle
+```
+* **for in**
+```js
+for (var event in map)
+console.log("Кореляция для '" + event +
+"' получается " + map[event]);
+// → Кореляция для 'пицца' получается 0.069
+// → Кореляция для 'тронул дерево' получается -0.081
+```
+
+* **unshift и shift** (добавляют иотнимают элементы в  начале массива)
+```js
+var todoList = [];
+function rememberTo(task) {
+todoList.push(task);
+}
+function whatIsNext() {
+return todoList.shift();
+}
+function urgentlyRememberTo(task) {
+todoList.unshift(task);
+}
+```
+* У метода **indexOf** есть родственник по имени **lastIndexOf**,
+который начинает поиск элемента в массиве с конца
+```js
+console.log([1, 2, 3, 2, 1].indexOf(2));
+// → 1
+console.log([1, 2, 3, 2, 1].lastIndexOf(2));
+// → 3
+```
+
+*Оба метода, indexOf и lastIndexOf, принимают
+необязательный второй аргумент, который задаёт
+начальную позицию поиска.*
+
+* **slice** (который принимает
+номера начального (start) и конечного (end) элементов, и
+возвращает массив, состоящий только из элементов,
+попадающих в этот промежуток. Включая тот, что
+находится по индексу start, но исключая тот, что по
+индексу end.)
+```js
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+// → [2, 3]
+console.log([0, 1, 2, 3, 4].slice(2));
+// → [2, 3, 4]
+```
+* **concat** (используется для склейки массивов)
+
+* **slice**
+* **indexOf**
+```js
+console.log("кокосы".slice(3, 6));
+// → осы
+console.log("кокос".indexOf("с"));
+// → 4
+```
+*Разница в том, что у строки метод indexOf может принять
+строку, содержащую больше одного символа, а у
+массивов такой метод работает только с одним
+элементом.*
+
+* **trim** (удаляет пробелы)
+```js
+console.log(" ладно \n ".trim());
+// → ладно
+```
+
+* **charAt**
+```js
+var string = "abc";
+console.log(string.length);
+// → 3
+console.log(string.charAt(0));
+// → a
+console.log(string[1]);
+// → b
+```
+
+* **arguments** (Она указывает на объект, содержащий все аргументы, переданные функции.)
+```js
+function addEntry(squirrel) {
+var entry = {events: [], squirrel: squirrel};
+for (var i = 1; i < arguments.length; i++)
+entry.events.push(arguments[i]);
+journal.push(entry);
+}
+addEntry(true, "работа", "тронул дерево", "пицца",
+```
+* **Math.max** (максимум)
+* **Math.min** (минимум)
+* **Math.sqrt** (квадратный корень)
