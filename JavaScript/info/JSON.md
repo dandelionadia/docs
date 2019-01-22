@@ -77,3 +77,55 @@ return person.name
 
 console.log(names) // ["Carolus Haverbeke"]
 ```
+
+поиск человека с самой ранней датой рождения:
+```js
+var min = ancestry[0]
+
+for (var i = 1; i < ancestry.length; i++) {
+ var cur = ancestry[i]
+ if (cur.born < min.born) {
+   min = cur
+ }
+}
+
+console.log(min)  //{name: "Carolus Haverbeke", sex: "m", born: 1832, died: 1905, father: "Carel Haverbeke", …}
+```
+
+код, находящий средний возраст мужчин и женщин в наборе:
+```js
+function average(array) {
+function plus(a, b) { return a + b; }
+return array.reduce(plus) / array.length;
+}
+function age(p) { return p.died - p.born; }
+function male(p) { return p.sex == "m"; }
+function female(p) { return p.sex == "f"; }
+console.log(average(ancestry.filter(male).map(age)));
+console.log(average(ancestry.filter(female).map(age)));
+// 73
+// 80
+```
+
+```js
+obj.foo = “bar”
+
+коли хочемо поставити значення ключа “фу”
+
+але якщо ми не знаємо яке буде ім”я ключа то:
+
+function setKey(key) {
+  obj[key] = “bar”
+}
+setKey(‘foo”) // { foo: ‘bar’ }
+setKey(‘john’) // { john: ‘bar’ }
+```
+
+```js
+var byName = {};
+ancestry.forEach(function(person) {
+byName[person.name] = person;
+});
+console.log(byName["Philibert Haverbeke"]);
+// →"Philibert Haverbeke":  {name: "Philibert Haverbeke", …}
+```
