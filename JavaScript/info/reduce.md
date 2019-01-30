@@ -87,7 +87,8 @@ var friends = [
 var allBooks = friends.reduce(function(a, b){
 	return [...a , ...b.books]
 }, ['Start'])
-
+// ... розвернути ['a','b'] => 'a', 'b'
+// а - спочатку 'Start', потім ["Start", "Bible", "Harry Potter"]....
 console.log(allBooks) // ["Start", "Bible", "Harry Potter", "War and peace", "Romeo and Juliet", "The Lord of the Rings", "The Shining"]
 ```
 //*інший спосіб вирішення*
