@@ -208,7 +208,7 @@ ReactDOM.render(element, rootElement)
 ```css
 #root {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 1.2rem;
 }
 
 .box {
@@ -314,4 +314,60 @@ const element = (
 )
 
 ReactDOM.render(element, rootElement) 
+```
+
+#
+1.
+```js
+const getElement = document.getElementById('root')
+
+function formatName(index) {
+   return index ? index.firstName + ' ' + index.lastName : undefined
+}
+
+const user = {
+  firstName: "Nadiia",
+  lastName: "Ridko",
+}
+
+const element = <h1>Hello, {formatName(user)}</h1>;
+ReactDOM.render(element, getElement)
+```
+
+2.
+```js
+const rootElement = document.getElementById('root')
+
+function Img({size, className, ...rest}) {
+  const sizeClassName= size ? `box--${size}` : ''
+  return (
+    <img 
+      className={`box ${className} ${sizeClassName}`}
+      style={{marginTop: 20}}
+      {...rest}
+      />
+  )
+}
+
+const srcElement = {
+  src: 'https://cfvod.kaltura.com/p/1836881/sp/183688100/thumbnail/entry_id/0_g8zctc7p/version/100012/width/600/height/400'
+}
+
+const element = (
+  <div>
+    <Img 
+        size="small"              
+        src={srcElement.src}>
+    </Img>
+    <Img 
+        size="medium"       
+        src={srcElement.src}>
+    </Img>
+    <Img 
+        size="large"              
+        src={srcElement.src}>
+    </Img>
+  </div>
+)
+ReactDOM.render(element, rootElement)
 ```
