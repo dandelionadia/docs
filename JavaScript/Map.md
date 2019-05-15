@@ -24,7 +24,16 @@ myMap.set(keyString, "value associated with 'a string'");
 myMap.set(keyObj, "value associated with keyObj");
 myMap.set(keyFunc, "value associated with keyFunc");
 
-myMap.size; // 3
+0: {"a string" => "value associated with 'a string'"}
+key: "a string"
+value: "value associated with 'a string'"
+1: {Object => "value associated with keyObj"}
+key: {}
+value: "value associated with keyObj"
+2: {function () {} => "value associated with keyFunc"}
+key: ƒ ()
+value: "value associated with keyFunc"
+length: 3
 
 // получение значений
 myMap.get(keyString);    // "value associated with 'a string'"
