@@ -1,6 +1,14 @@
 ## JSON
 **(JSON)** - стандартный текстовый формат для представления структурированных данных на основе синтаксиса объекта JavaScript. 
 
+**MethodsSection**
+
+`JSON.parse()`
+Parse a string as JSON, optionally transform the produced value and its properties, and return the value.
+
+`JSON.stringify()`
+Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner.
+
 * JSON - это чисто формат данных - он содержит только свойства, а не методы.
 * JSON требует двойных кавычек, которые будут использоваться вокруг строк и имен свойств. Одиночные кавычки недействительны.
 * JSON может фактически принимать форму любого типа данных, который действителен для включения внутри JSON, а не только массивов или объектов. 
