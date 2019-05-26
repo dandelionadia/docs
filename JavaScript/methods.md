@@ -1,4 +1,4 @@
-## 1 concat
+T## 1 concat
 ```js
 var a = [1,2,3];
 var b = [4,5,6];
@@ -117,4 +117,35 @@ console.log(nums);
 
   console.log(name); 
   console.log(nameArray);
+```
+## 13 for
+```js
+var str = "";
+
+for (var i = 0; i < 9; i++) {
+  str = str + i;
+}
+
+console.log(str);
+// expected output: "012345678"
+
+```
+
+## 14 pop
+
+The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+
+```js
+var plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(plants.pop());
+// expected output: "tomato"
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+plants.pop();
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage"]
 ```
