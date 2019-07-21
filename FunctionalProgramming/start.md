@@ -75,3 +75,77 @@ let list = [1, 2, 3, 4, 5];
 
 const incrementNumbers = (list) => list.map(number => number + 1);
 ```
+
+### Functions as first-class entities
+
+The idea is to treat functions as values and pass functions like data. This way we can combine different functions to create new functions with new behavior.
+
+Functions as first-class entities can:
+
+- refer to it from constants and variables
+- pass it as a parameter to other functions
+- return it as result from other functions
+
+```js
+const sum = (a, b) => a + b;
+const subtraction = (a, b) => a - b;
+
+const doubleOperator = (f, a, b) => f(a, b) * 2;
+
+doubleOperator(sum, 3, 1); // 8
+doubleOperator(subtraction, 3, 1); // 4
+```
+
+```js
+function doubleOperator(f, a, b) {
+  return f(a, b) * 2;
+}
+```
+
+### Higher-order functions
+
+When we talk about higher-order functions, we mean a function that either:
+
+- takes one or more functions as arguments
+- returns a function as its result.
+
+The doubleOperator function we implemented above is a higher-order function because it takes an operator function as an argument and uses it.
+
+#### 1. Filter
+
+The filter function expects a true or false value to determine if the element should or should not be included in the result collection.
+
+```js
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var evenNumbers = [];
+
+for (var i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 == 0) {
+    evenNumbers.push(numbers[i]);
+  }
+}
+
+console.log(evenNumbers); // (6) [0, 2, 4, 6, 8, 10]
+```
+
+Good!
+
+```js
+const even = n => n % 2 == 0;
+const listOfNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+listOfNumbers.filter(even); // [0, 2, 4, 6, 8, 10]
+```
+
+Good!!!
+
+```js
+let people = [
+  { name: "TK", age: 26 },
+  { name: "Kaio", age: 10 },
+  { name: "Kazumi", age: 30 }
+];
+
+const olderThan21 = person => person.age > 21;
+const overAge = people => people.filter(olderThan21);
+overAge(people); // [{ name: 'TK', age: 26 }, { name: 'Kazumi', age: 30 }]
+```
