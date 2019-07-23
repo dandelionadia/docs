@@ -149,3 +149,122 @@ const olderThan21 = person => person.age > 21;
 const overAge = people => people.filter(olderThan21);
 overAge(people); // [{ name: 'TK', age: 26 }, { name: 'Kazumi', age: 30 }]
 ```
+
+### 2. Map
+
+The map method transforms a collection by applying a function to all of its elements and building a new collection from the returned values.
+
+In a imperative JavaScript way, it would be:
+
+```js
+var people = [
+  { name: "TK", age: 26 },
+  { name: "Kaio", age: 10 },
+  { name: "Kazumi", age: 30 }
+];
+
+var peopleSentences = [];
+
+for (var i = 0; i < people.length; i++) {
+  var sentence = people[i].name + " is " + people[i].age + " years old";
+  peopleSentences.push(sentence);
+}
+
+console.log(peopleSentences); // ['TK is 26 years old', 'Kaio is 10 years old', 'Kazumi is 30 years old']
+```
+
+In a declarative JavaScript way, it would be:
+
+```js
+const makeSentence = person => `${person.name} is ${person.age} years old`;
+
+const peopleSentences = people => people.map(makeSentence);
+
+peopleSentences(people);
+// ['TK is 26 years old', 'Kaio is 10 years old', 'Kazumi is 30 years old']
+```
+
+2
+
+```js
+var values = [1, 2, 3, -4, 5];
+
+for (var i = 0; i < values.length; i++) {
+  values[i] = Math.abs(values[i]);
+}
+
+console.log(values); // [1, 2, 3, 4, 5]
+```
+
+Good!!
+
+```js
+let values = [1, 2, 3, -4, 5];
+
+const updateListMap = values => values.map(Math.abs);
+
+updateListMap(values); // [1, 2, 3, 4, 5]
+```
+
+### 3. Reduce
+
+The idea of reduce is to receive a function and a collection, and return a value created by combining the items.
+
+```js
+var orders = [
+  { productTitle: "Product 1", amount: 10 },
+  { productTitle: "Product 2", amount: 30 },
+  { productTitle: "Product 3", amount: 20 },
+  { productTitle: "Product 4", amount: 60 }
+];
+
+var totalAmount = 0;
+
+for (var i = 0; i < orders.length; i++) {
+  totalAmount += orders[i].amount;
+}
+
+console.log(totalAmount); // 120
+```
+
+Using reduce, we can build a function to handle the amount sum and pass it as an argument to the reduce function.
+
+```js
+let shoppingCart = [
+  { productTitle: "Product 1", amount: 10 },
+  { productTitle: "Product 2", amount: 30 },
+  { productTitle: "Product 3", amount: 20 },
+  { productTitle: "Product 4", amount: 60 }
+];
+
+const sumAmount = (currentTotalAmount, order) =>
+  currentTotalAmount + order.amount;
+
+const getTotalAmount = shoppingCart => shoppingCart.reduce(sumAmount, 0);
+
+getTotalAmount(shoppingCart); // 120
+```
+
+Cool!!!!
+
+```js
+let shoppingCart = [
+  { productTitle: "Functional Programming", type: "books", amount: 10 },
+  { productTitle: "Kindle", type: "eletronics", amount: 30 },
+  { productTitle: "Shoes", type: "fashion", amount: 20 },
+  { productTitle: "Clean Code", type: "books", amount: 60 }
+];
+
+const byBooks = order => order.type == "books";
+const getAmount = order => order.amount;
+const sumAmount = (acc, amount) => acc + amount;
+
+function getTotalAmount(shoppingCart) {
+  return shoppingCart
+    .filter(byBooks)
+    .map(getAmount)
+    .reduce(sumAmount, 0);
+}
+
+getTotalAmount(shoppingCart); // 70
+```
