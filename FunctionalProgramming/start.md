@@ -13,7 +13,27 @@ const calculateArea = (radius, pi) => radius _ radius _ pi;
 calculateArea(10, PI); // returns 314.0
 ```
 
+2
+
+```js
+// нечистая
+let minimum = 21;
+const checkAge = age => age >= minimum;
+
+// чистая
+const checkAge = age => {
+  const minimum = 21;
+  return age >= minimum;
+};
+```
+
 Now we’ll always pass the value of PI as a parameter to the function. So now we are just accessing parameters passed to the function. No external object.
+
+### Побочные эффекты могут включать...
+
+Побочный эффект — это изменение состояния системы или наблюдаемое взаимодействие с окружающим миром, происходящее во время вычисления результата.
+
+Любое взаимодействие со средой вне функции уже является побочным эффектом
 
 ### Reading Files
 
