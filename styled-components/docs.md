@@ -4,12 +4,9 @@ when you want the same style but with different tag
 
 ```js
 const Button = styled.button`
-  padding: 0.25rem 0.5rem;
   background-color: ${({ kind }) =>
     kind === "primary" ? "green" : "transparent"};
   border-radius: ${props => (props.noBorderRadius ? 0 : "2rem")};
-  border: 2px solid #fff;
-  color: #fff;
 `;
 ```
 
@@ -35,19 +32,16 @@ ${({ kind }) => kind === 'primary' && `
 		color: red;
 	`}
 
-	${({ kind }) => kind === 'secondary' && `
-		color: blue;
-	`}
+${({ kind }) => kind === 'secondary' && `
+  color: blue;
+`}
 ```
 
 ```js
 const Button = styled.button`
-  padding: 0.25rem 0.5rem;
   background-color: ${({ kind }) =>
     kind === "primary" ? "green" : "transparent"};
   border-radius: ${props => (props.noBorderRadius ? 0 : "2rem")};
-  border: 2px solid #fff;
-  color: #fff;
 
   ${({ kind }) =>
     kind === "primary" &&
