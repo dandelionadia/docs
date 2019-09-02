@@ -82,3 +82,11 @@ export default Homepage;
 ```
 
 Now when we click on the link we will go to the `About` page.
+
+#
+
+> сторінка по замовчуванню
+
+```js
+render={() => <Redirect to="/artist/zfddfzhz" />
+```
