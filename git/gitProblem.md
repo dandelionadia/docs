@@ -29,3 +29,9 @@ $ git checkout .
 `reset` робить зелені файли червоними
 
 `checkout` прибирає зміни (червоні файли)
+
+- **To see all branches?**
+
+```
+	git branch -l
+```
