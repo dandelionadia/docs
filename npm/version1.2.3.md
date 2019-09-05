@@ -7,3 +7,4 @@ The caret `^` is more relaxed. It matches the most recent minor version (the sec
 ![img](./img/wheelbarrel-with-tilde-caret-white-bg-w1000.jpg)
 
 ![img](./img/Screenshot.png)
+![version](./img/version.png)
