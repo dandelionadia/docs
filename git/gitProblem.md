@@ -35,3 +35,79 @@ $ git checkout .
 ```
 	git branch -l
 ```
+
+## merge conflict (rebase)
+
+- chenges code
+
+```
+git log
+git rebase -i COMMIT_HASH_BEFORE_PROBLEM
+choose edit, pick, drop, etc.
+do changes
+git status
+git add NAME_FILE
+git commit --amend
+git rebase --continue
+git status
+git push --force
+
+```
+
+- rename commit
+
+```
+---
+git log
+git rebase -i COMMIT_HASH_BEFORE_PROBLEM
+choose edit, pick, drop, etc.
+do changes
+git status
+git push --force
+
+```
+
+## Прибрати всі зміни
+
+- reset робить зелені файли червоними
+
+```
+ git reset .
+```
+
+- ЛИШЕ коли зміни не закомічені:
+
+```
+git checkout .
+```
+
+прибрати всі зміни (червоні файли)
+
+## При закінченні змін
+
+```
+master: git pull --rebase
+my_branch:
+   git rebase master
+   git push
+```
+
+## HELP FROM REBASE
+
+```
+git rebase --abort
+```
+
+## Pозвертає останній коміт
+
+```
+git log (показує всі коміти)
+git reset HEAD~ (розвертає останній коміт(будуть червоні))
+```
+
+## Всі зміни
+
+```
+git diff
+(changes)
+```
