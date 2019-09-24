@@ -90,3 +90,5 @@ Now when we click on the link we will go to the `About` page.
 ```js
 render={() => <Redirect to="/artist/zfddfzhz" />
 ```
+
+> link змінює назву у сидкі а route перезодить на по зміненій назві у силці
