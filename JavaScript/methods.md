@@ -86,6 +86,15 @@ console.log(array.reduce(reducer, 5));
 expected output: 15
 ```
 
+- **accumulator**
+  Аккумулятор, аккумулирующий значение, которое возвращает функция callback после посещения очередного элемента, либо значение initialValue, если оно предоставлено (смотрите пояснения ниже).
+
+- **currentValue**
+  Текущий обрабатываемый элемент массива.\*
+
+- **initialValue** Необязательный
+  Необязательный параметр. Объект, используемый в качестве первого аргумента при первом вызове функции callback.\*
+
 ## 8 some
 
 ```js
@@ -196,4 +205,91 @@ var removed = myFish.splice(3, 1);
 
 // removed равен ["mandarin"]
 // myFish равен ["angel", "clown", "drum", "sturgeon"]
+```
+
+##
+
+##
+
+## 1. JSON.parse()
+
+_method parses a JSON string, converts a string back to an object (array)._
+
+```js
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
+console.log(obj);
+
+// {result: true, count: 42}
+```
+
+```js
+// response.json() does JSON.parse.
+fetch("...").then(response => response.json());
+```
+
+## 2. JSON.stringify()
+
+```js
+const json = { result: true, count: 42 };
+const obj = JSON.stringify(json);
+console.log(obj);
+// {"result":true,"count":42}
+```
+
+```js
+useEffect(() => {
+  fetch("http://192.168.0.122:8043/form", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ firstName: "Pop" })
+  });
+}, []);
+```
+
+## 3. Number
+
+```js
+const str = "1,5,7";
+str.split(",");
+// ["1", "5", "7"]
+str.split(",").map(Number);
+// [1, 5, 7]
+```
+
+```js
+Number("123");
+// 123
+Number([4]);
+//4
+```
+
+## 4. parseFloat()
+
+_The **parseFloat()** function parses an argument (converting it to a string first if needed) and returns a floating point number._
+
+```js
+parseFloat(3.14);
+3.14;
+parseFloat("3.14");
+3.14;
+```
+
+## 5. join()
+
+_The **join()** method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string._
+
+```js
+const elements = ["Fire", "Air", "Water"];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(""));
+// expected output: "FireAirWater"
+
+console.log(elements.join("-"));
+// expected output: "Fire-Air-Water"
 ```
