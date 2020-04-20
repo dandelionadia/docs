@@ -73,6 +73,8 @@ export const initialState: CartState = {
 _CartPage.tsx_
 
 ```tsx
+import { useSelector } from "react-redux";
+
 export const CartPage: React.FC = () => {
   const cart = useSelector<any, any>((state) => state.cart);
 
@@ -105,4 +107,97 @@ _CartItemsList.tsx_
 			</div>
 		)
 	}
+```
+
+## cartSummary: counts total price
+
+_store.ts_
+
+```js
+import { CartState } from "./reducers/cart/cart.state";
+
+export interface AppState {
+  cart: CartState;
+}
+```
+
+_CartPage.tsx_
+
+```js
+  const templateTablet = `
+    cartItems
+    cartTotals
+  `
+  const templateLg = `
+    cartItems cartTotals
+    / 1fr auto
+  `
+
+  xport const CartPage: React.FC = () => {
+  const cart = useSelector<any, any>((state) => state.cart)
+  const cartTotal = useSelector<AppState, any>((state) => {
+    return state.cart.items.reduce<number>((acc, item) => {
+      return acc + getTotalPrice(item)
+    }, 0)
+  })
+  ...
+  <Areas.CartTotals>
+    <CartSummary subtotalPrice={cartTotal} totalPrice={cartTotal} />
+  </Areas.CartTotals>
+```
+
+_CartItemsList.tsx_
+
+```js
+interface CartItemsListProps {
+  items: CartItem[];
+}
+
+export const getTotalPrice = (item: CartItem) => {
+  return Number((item.price * item.quantity).toFixed(2))
+}
+
+export const CartItemsList: React.FC<CartItemsListProps> = ({ items }) => {
+  return
+```
+
+_CartSummary.tsx_
+
+```js
+  interface CartSummaryProps {
+    subtotalPrice: number
+    totalPrice: number
+  }
+
+  export const CartSummary: React.FC<CartSummaryProps> = ({
+    subtotalPrice,
+    totalPrice,
+  }) => {
+    return (
+      <Box as={StyledCartTotals} widthLg="200px" widthXl="250px">
+        <Heading as="h2">Cart totals</Heading>
+        <Composition
+          templateCols="repeat(2,1fr)"
+          paddingVertical="30px"
+          as={StyledBoxPrice}
+        >
+          <span>Subtotal:</span>
+          <StyledProductSubtotal>${subtotalPrice}</StyledProductSubtotal>
+        </Composition>
+        <Composition
+          templateCols="repeat(2,1fr)"
+          paddingVertical="30px"
+          alignItems="center"
+          flex
+          justifyContent="space-between"
+        >
+          <span>Total:</span>
+          <StyledTotalPrice>${totalPrice}</StyledTotalPrice>
+        </Composition>
+        <StyledButton>
+          <StyledLink href="#">Proceed To Checkout</StyledLink>
+        </StyledButton>
+      </Box>
+    )
+  }
 ```
