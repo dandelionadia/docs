@@ -201,3 +201,97 @@ _CartSummary.tsx_
     )
   }
 ```
+
+## Cart: adds action: add to cart; adds products to the cart
+
+_ProductSummary.tsx_
+
+```js
+export interface ProductSummaryProps {
+  // rating: number
+  // price: number
+  // description: string
+  onAddToCartClick?: () => void;
+}
+
+const ProductSummary: React.FC<ProductSummaryProps> = ({
+  // ating,
+  // price,
+  // description,
+  onAddToCartClick,
+}) => {
+  const cartItems = useSelector<AppState, any>((state) => state.cart.items)
+  return (
+    <Composition max="10" defaultValue="1">
+        <Button onClick={onAddToCartClick}>≙ add to card</Button>
+    </Composition>
+  )
+}
+```
+
+_ProductPage.tsx_
+
+```js
+import { addToCart } from "../../store/reducers/cart/cart.actions";
+import { useDispatch } from "react-redux";
+
+const ProductPage: React.FC<
+  RouteComponentProps<{
+    productId: string,
+  }>
+> = ({ match }) => {
+  const dispatch = useDispatch();
+  return <p>Error when fetching product</p>;
+};
+
+const handleClick = () => {
+  dispatch(addToCart(productId, data.title, data.price));
+};
+
+return <ProductSummary onAddToCartClick={handleClick} />;
+```
+
+_cart.actions.ts_
+
+```js
+import { ADD_TO_CART } from "./types";
+
+export const addToCart = (id: string, title: string, price: number) => {
+  return {
+    type: ADD_TO_CART,
+    id,
+    title,
+    price,
+  };
+};
+```
+
+_cart.reducer.ts_
+
+```js
+import { ADD_TO_CART } from "./types";
+
+export const cartReducer = (state: CartState, action: any) => {
+  if (action.type === ADD_TO_CART) {
+    console.log("success");
+    const nextItems = state.items.concat({
+      id: action.id,
+      title: action.title,
+      price: action.price,
+      quantity: 1,
+    });
+
+    return {
+      items: nextItems,
+    };
+  }
+
+  return initialState;
+};
+```
+
+_types.js_
+
+```js
+export const ADD_TO_CART = "ADD_TO_CART";
+```
