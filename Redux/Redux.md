@@ -204,51 +204,10 @@ _CartSummary.tsx_
 
 ## Cart: adds action: add to cart; adds products to the cart
 
-_ProductSummary.tsx_
+_types.js_
 
 ```js
-export interface ProductSummaryProps {
-  // rating: number
-  // price: number
-  // description: string
-  onAddToCartClick?: () => void;
-}
-
-const ProductSummary: React.FC<ProductSummaryProps> = ({
-  // ating,
-  // price,
-  // description,
-  onAddToCartClick,
-}) => {
-  const cartItems = useSelector<AppState, any>((state) => state.cart.items)
-  return (
-    <Composition max="10" defaultValue="1">
-        <Button onClick={onAddToCartClick}>≙ add to card</Button>
-    </Composition>
-  )
-}
-```
-
-_ProductPage.tsx_
-
-```js
-import { addToCart } from "../../store/reducers/cart/cart.actions";
-import { useDispatch } from "react-redux";
-
-const ProductPage: React.FC<
-  RouteComponentProps<{
-    productId: string,
-  }>
-> = ({ match }) => {
-  const dispatch = useDispatch();
-  return <p>Error when fetching product</p>;
-};
-
-const handleClick = () => {
-  dispatch(addToCart(productId, data.title, data.price));
-};
-
-return <ProductSummary onAddToCartClick={handleClick} />;
+export const ADD_TO_CART = "ADD_TO_CART";
 ```
 
 _cart.actions.ts_
@@ -262,6 +221,7 @@ export const addToCart = (id: string, title: string, price: number) => {
     id,
     title,
     price,
+    quantity: 2,
   };
 };
 ```
@@ -290,8 +250,131 @@ export const cartReducer = (state: CartState, action: any) => {
 };
 ```
 
-_types.js_
+_ProductPage.tsx_
 
 ```js
-export const ADD_TO_CART = "ADD_TO_CART";
+import { addToCart } from "../../store/reducers/cart/cart.actions";
+import { useDispatch } from "react-redux";
+
+const ProductPage: React.FC<
+  RouteComponentProps<{
+    productId: string,
+  }>
+> = ({ match }) => {
+  const dispatch = useDispatch();
+  return <p>Error when fetching product</p>;
+};
+
+const handleAddToCart = () => {
+  dispatch(addToCart(productId, data.title, data.price));
+};
+
+return <ProductSummary onAddToCartClick={handleAddToCart} />;
+```
+
+_ProductSummary.tsx_
+
+```js
+export interface ProductSummaryProps {
+  onAddToCartClick?: () => void;
+}
+
+const ProductSummary: React.FC<ProductSummaryProps> = ({onAddToCartClick,}) => {
+  const cartItems = useSelector<AppState, any>((state) => state.cart.items)
+  return (
+    <Composition max="10" defaultValue="1">
+        <Button onClick={onAddToCartClick}>≙ add to card</Button>
+    </Composition>
+  )
+}
+```
+
+## Cart: adds quantity to the action addToCart
+
+_ProductSummary.tsx_
+
+```js
+  export interface ProductSummaryProps {
+    onAddToCartClick: (quantity: number) => void
+  }
+
+  const ProductSummary: React.FC<ProductSummaryProps>  = => {
+    const [productQuantity, setProductQuantity] = useState(1)
+
+     return (
+       <>
+        <StyledInput name="quantity"  value={productQuantity} onChange={(e) => setProductQuantity(Number(e.target.value))} />
+        <Button onClick={() => onAddToCartClick(productQuantity)}>≙ add to card</Button>
+        </>
+     )
+  }
+```
+
+_ProductPage.tsx_
+
+```js
+const handleAddToCart = (quantity: number) => {
+  dispatch(addToCart(productId, data.title, data.price, quantity));
+};
+```
+
+_cart.actions.ts_
+
+```js
+export const addToCart = (
+  id: string,
+  title: string,
+  price: number,
+  quantity: number
+) => {
+  return {
+    type: ADD_TO_CART,
+    id,
+    title,
+    price,
+    quantity,
+  };
+};
+```
+
+_cart.reducer.ts_
+
+```js
+  export const cartReducer = (state: CartState = initialState, action: any) => {
+      id: action.id,
+      title: action.title,
+      price: action.price,
+      quantity: action.quantity,
+    })
+
+```
+
+## if index does not exist then add it, if it does then do not create a new one but rewrite a quantity
+
+_cart.reducer.ts_
+
+```js
+  export const cartReducer = (state: CartState = initialState, action: any) => {
+  if (action.type === ADD_TO_CART) {
+    const stateItems = state.items
+
+    // ...try to find exist index if not going then go to the nextItems
+    const existingIndex = stateItems.findIndex((item) => {
+      return item.id === action.id
+    })
+
+    if (existingIndex >= 0) {
+      stateItems[existingIndex].quantity =
+        stateItems[existingIndex].quantity + action.quantity
+
+      return {
+        items: stateItems,
+      }
+    }
+
+    //adds new product
+    const nextItems = state.items.concat({
+      id: action.id,
+      title: action.title,
+      ...
 ```
