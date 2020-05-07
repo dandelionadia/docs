@@ -1,3 +1,42 @@
+## Primary
+
+```js
+const Button = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: ${(props) => (props.primary ? "palevioletred" : "white")};
+  color: ${(props) => (props.primary ? "white" : "palevioletred")};
+  margin: 1em;
+  padding: 0.25em 1em;
+`;
+render(
+  <div>
+    <Button>Normal</Button>
+    <Button primary>Primary</Button>
+  </div>
+);
+```
+
+## Styling any component
+
+```js
+const Link = ({ className, children }) => (
+  <a className={className}>{children}</a>
+);
+
+const StyledLink = styled(Link)`
+  color: palevioletred;
+  font-weight: bold;
+`;
+
+render(
+  <div>
+    <Link>Unstyled, boring Link</Link>
+    <br />
+    <StyledLink>Styled, exciting Link</StyledLink>
+  </div>
+);
+```
+
 ## 1. as={..}
 
 when you want the same style but with different tag
@@ -6,12 +45,14 @@ when you want the same style but with different tag
 const Button = styled.button`
   background-color: ${({ kind }) =>
     kind === "primary" ? "green" : "transparent"};
-  border-radius: ${props => (props.noBorderRadius ? 0 : "2rem")};
+  border-radius: ${(props) => (props.noBorderRadius ? 0 : "2rem")};
 `;
 ```
 
 ```js
-<Button as="a" />
+<Button as="a" href="/">
+  Link with Button styles
+</Button>
 ```
 
 ## 2. styled(...)
@@ -19,10 +60,26 @@ const Button = styled.button`
 It creates new komponent based on existing component.
 
 ```js
-const Foo = styled(Button)`
+const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  display: block;
+`;
+
+const TomatoButton = styled(Button)`
+  color: tomato;
+  border-color: tomato;
   // these styles add to the styles of button.
   // any same styles will be overwritten.
 `;
+
+<Button>Normal Button</Button>
+<TomatoButton>Tomato Button</TomatoButton>
 ```
 
 ## 3. kind
@@ -41,7 +98,7 @@ ${({ kind }) => kind === 'secondary' && `
 const Button = styled.button`
   background-color: ${({ kind }) =>
     kind === "primary" ? "green" : "transparent"};
-  border-radius: ${props => (props.noBorderRadius ? 0 : "2rem")};
+  border-radius: ${(props) => (props.noBorderRadius ? 0 : "2rem")};
 
   ${({ kind }) =>
     kind === "primary" &&
