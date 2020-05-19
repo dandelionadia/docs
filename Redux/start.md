@@ -294,3 +294,67 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
 ```
+
+## Updating State Immutably
+
+reducer.js
+
+```js
+const initialState = {
+  results: [],
+}
+
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'STORE_RESULT':
+      return {
+        ...state,
+        results: state.results.concat({ id: new Date(), value: state.counter }),
+      }
+  }
+
+  return state
+}
+```
+
+Counter.js
+
+```js
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import CounterControl from '../../components/CounterControl/CounterControl'
+import CounterOutput from '../../components/CounterOutput/CounterOutput'
+
+class Counter extends Component {
+  render() {
+    return (
+      <div>
+        <button onClick={this.props.onStoreResult}>Store Result</button>
+        <ul>
+          {this.props.storedResults.map((strResult) => (
+            <li key={strResult.id} onClick={this.props.onDeleteResult}>
+              {strResult.value}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    storedResults: state.results,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onStoreResult: () => dispatch({ type: 'STORE_RESULT' }),
+    onDeleteResult: () => dispatch({ type: 'DELETE_RESULT' }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+```
