@@ -140,25 +140,3 @@ if (action.type === 'INCREMENT') {
 //   return state;
 // };
 ```
-
-### Passing and Retrieving Data with Action
-
-#### Counter.js
-
-```js
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // onAddCounter: () => dispatch({ type: 'ADD'}) <- was
-    onAddCounter: () => dispatch({ type: 'ADD', value: 10 }),
-}
-```
-
-#### reduser.js
-
-```js
-case 'ADD':
-      return {
-        ...state,
-        counter: state.counter + action.value,
-      }
-```
