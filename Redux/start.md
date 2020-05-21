@@ -377,3 +377,58 @@ class Counter extends Component {
   }
 }
 ```
+
+# 3
+
+## Updating Arrays Immutably
+
+Counter.js
+
+```js
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onDeleteResult: (id) =>
+      dispatch({ type: 'DELETE_RESULT', resultsElId: id }),
+  }
+}
+```
+
+reducer.js
+
+```js
+const initialState = {
+  counter: 0,
+  results: [],
+}
+
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'DELETE_RESLT':
+      // does not touch the old array, returns  a new one
+      const updatedArray = state.results.filter(
+        (result) => result.id !== action.resultsElId
+      )
+      return {
+        ...state,
+        results: updatedArray,
+      }
+  }
+
+  return state
+}
+```
+
+Counter.js
+
+```js
+<ul>
+  {this.props.storedResults.map((strResult) => (
+    <li
+      key={strResult.id}
+      onClick={() => this.props.onDeleteResult(strResult.id)}
+    >
+      {strResult.value}
+    </li>
+  ))}
+</ul>
+```
