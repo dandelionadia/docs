@@ -1,3 +1,5 @@
+# 1
+
 # Connecting React to Redux
 
 _install ..._
@@ -295,12 +297,41 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
 ```
 
+# 2
+
 ## Updating State Immutably
+
+Counter.js
+
+```js
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onStoreResult: () => dispatch({ type: 'STORE_RESULT' })
+}
+```
+
+Counter.js
+
+```js
+class Counter extends Component {
+  render() {
+    return (
+      <div>
+        <button onClick={this.props.onStoreResult}>Store Result</button>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+    )
+  }
+}
+```
 
 reducer.js
 
 ```js
 const initialState = {
+  counter: 0,
   results: [],
 }
 
@@ -320,12 +351,17 @@ export const reducer = (state = initialState, action) => {
 Counter.js
 
 ```js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+const mapStateToProps = (state) => {
+  return {
+    // ctr: state.counter,
+    storedResults: state.results,
+  }
+}
+```
 
-import CounterControl from '../../components/CounterControl/CounterControl'
-import CounterOutput from '../../components/CounterOutput/CounterOutput'
+Counter.js
 
+```js
 class Counter extends Component {
   render() {
     return (
@@ -333,28 +369,11 @@ class Counter extends Component {
         <button onClick={this.props.onStoreResult}>Store Result</button>
         <ul>
           {this.props.storedResults.map((strResult) => (
-            <li key={strResult.id} onClick={this.props.onDeleteResult}>
-              {strResult.value}
-            </li>
+            <li key={strResult.id}>{strResult.value}</li>
           ))}
         </ul>
       </div>
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    storedResults: state.results,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onStoreResult: () => dispatch({ type: 'STORE_RESULT' }),
-    onDeleteResult: () => dispatch({ type: 'DELETE_RESULT' }),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
 ```
