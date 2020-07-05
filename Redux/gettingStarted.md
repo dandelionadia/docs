@@ -14,6 +14,10 @@ yarn add redux
 
 > wrapping your entire application in a <Provider> component to make the store available throughout the component tree
 
+```
+npm install react-redux
+```
+
 ```js
 import { store } from "../store/store";
 
