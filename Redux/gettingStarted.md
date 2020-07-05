@@ -15,6 +15,14 @@ yarn add redux
 > wrapping your entire application in a <Provider> component to make the store available throughout the component tree
 
 ```js
+import { store } from "../store/store";
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
 ```
 
 #### types
