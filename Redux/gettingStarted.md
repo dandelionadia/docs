@@ -30,7 +30,7 @@ ReactDOM.render(
 src/store/reducers/cart/types.js
 
 ```js
-export const DELETE_TO_CART = "DELETE_TO_CART";
+export const DELETE_FROM_CART = "DELETE_TO_CART";
 ```
 
 ### `store`
@@ -42,7 +42,7 @@ src/store/reducers/cart/cart.action.ts
 ```js
 import {DALETE_TO_CART} from './types'
 
-export const deleteFromCart = (id: string) {
+export const deleteFromCart = (id: string) => {
 	return {
 		types: DELETE_FROM_CART,
 		id.
@@ -51,9 +51,7 @@ export const deleteFromCart = (id: string) {
 
 ```
 
-#### Create a `Store`
-
-##### store/reducers/cart/cart.reducer.ts
+#### cart.reducer.ts
 
 src/store/reducers/cart/cart.reducer.ts
 
@@ -61,8 +59,8 @@ src/store/reducers/cart/cart.reducer.ts
 import { CartState, initialState } from "./cart.state";
 
 export const cartReducer = (state, action) => {
-  if (action.type === DELeTE_TO_CART) {
-    //do samething
+  if (action.type === DELeTE_FROM_CART) {
+    //do sth
   }
 };
 ```
