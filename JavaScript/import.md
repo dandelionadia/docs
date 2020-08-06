@@ -48,8 +48,8 @@ export default reducer
 index.js
 
 ```js
-import counterReducer from "./sore/reducers/counter";
-import resultReducer from "./sore/reducers/result";
+import reducer from "./sore/reducers/counter";
+import reducer from "./sore/reducers/result";
 ```
 
 ### Syntax
