@@ -198,6 +198,7 @@ expected output: 15
 const arr = [1, 10, 11, 23, 5, 4];
 const largeNumbs = arr.some((numb) => numb > 5);
 console.log(largeNumbs);
+//true
 ```
 
 ## 12 every
@@ -206,7 +207,12 @@ console.log(largeNumbs);
 const array2 = [1, 5, 7, 9, 11];
 const greaterNumb = array2.every((numb) => numb > 3);
 console.log(greaterNumb);
+//false
 ```
+
+> The **some()** method tests whether some element in the array passes the test implemented by the provided function.
+
+> The **every()** method tests whether all elements in the array pass the test implemented by the provided function.
 
 ## 13 sort
 
